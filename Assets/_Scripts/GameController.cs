@@ -10,13 +10,23 @@ public class GameController : MonoBehaviour {
 	public Text scoreText;
 	public Text scoreLives;
 
+	public GameObject Player;
+
 	// Use this for initialization
 	void Start ()
 	{
 		UpdateLives();
 		UpdateScore();
 	}
-	
+
+	void Update()
+	{
+		if (lives <= 0)
+		{
+			Destroy(Player);
+		}
+	}
+
 	public void AddScore(int newScoreValue)
 	{
 		score += newScoreValue;

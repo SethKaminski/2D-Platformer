@@ -1,11 +1,12 @@
 ﻿<Properties>
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
-  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\_Scripts\SimplePlatformController.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\_Scripts\GameController.cs">
     <Files>
-      <File FileName="Assets\_Scripts\SimplePlatformController.cs" Line="26" Column="2" />
-      <File FileName="Assets\_Scripts\EnemyController.cs" Line="33" Column="59" />
-      <File FileName="Assets\_Scripts\SoundThenDie.cs" Line="15" Column="2" />
-      <File FileName="Assets\GameController.cs" Line="5" Column="22" />
+      <File FileName="Assets\_Scripts\SimplePlatformController.cs" Line="17" Column="1" />
+      <File FileName="Assets\_Scripts\EnemyController.cs" Line="1" Column="1" />
+      <File FileName="Assets\_Scripts\SoundThenDie.cs" Line="1" Column="1" />
+      <File FileName="Assets\_Scripts\GameController.cs" Line="26" Column="20" />
+      <File FileName="Assets\_Scripts\PointUp.cs" Line="26" Column="4" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.Breakpoints>

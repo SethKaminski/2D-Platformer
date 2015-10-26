@@ -45,11 +45,13 @@
 	</Reference>
   </ItemGroup>
   <ItemGroup>
-     <Compile Include="Assets\GameController.cs" />
-     <Compile Include="Assets\PointUp.cs" />
      <Compile Include="Assets\_Scripts\EnemyController.cs" />
+     <Compile Include="Assets\_Scripts\GameController.cs" />
+     <Compile Include="Assets\_Scripts\KillOnContact.cs" />
+     <Compile Include="Assets\_Scripts\PointUp.cs" />
      <Compile Include="Assets\_Scripts\SimplePlatformController.cs" />
      <Compile Include="Assets\_Scripts\SoundThenDie.cs" />
+     <Compile Include="Assets\_Scripts\StayOnPlayer.cs" />
  <Reference Include="UnityEngine.UI">
  <HintPath>C:/Program Files/Unity/Editor/Data/UnityExtensions/Unity/GUISystem/UnityEngine.UI.dll</HintPath>
  </Reference>
