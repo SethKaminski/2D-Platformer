@@ -2,35 +2,29 @@
 using System.Collections;
 
 public class SoundThenDie : MonoBehaviour {
-
-	private Rigidbody2D rb;
+	
 	private AudioSource aS;
 	private SpriteRenderer sr;
-	
-	private float dieTime = 0;
 
 	void Start ()
 	{
-		this.rb = GetComponent<Rigidbody2D>();
 		this.aS = GetComponent<AudioSource> ();
 		this.sr = GetComponent<SpriteRenderer>();
-	}
-	
-	void Update()
-	{
-		if (this.dieTime > 0 && Time.time >= this.dieTime)
-		{
-			Destroy(this.gameObject);
-		}
 	}
 
 	void OnTriggerEnter2D(Collider2D other)
 	{
-		if (this.dieTime == 0)
+		if (this.sr.enabled == true)
 		{
 			this.aS.Play();
 			this.sr.enabled = false;
-			this.dieTime = Time.time + this.aS.clip.length;
+
+			Invoke("Die", this.aS.clip.length);
 		}
+	}
+
+	void Die()
+	{
+		Destroy(this.gameObject);
 	}
 }
