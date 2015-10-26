@@ -13,14 +13,14 @@ public class SimplePlatformController : MonoBehaviour {
 	
 	private bool grounded = false;
 	private Animator anim;
-	private Rigidbody2D rb2d;
+	private Rigidbody2D rb;
 	
 	
 	// Use this for initialization
 	void Awake () 
 	{
 		anim = GetComponent<Animator>();
-		rb2d = GetComponent<Rigidbody2D>();
+		rb = GetComponent<Rigidbody2D>();
 	}
 	
 	// Update is called once per frame
@@ -39,13 +39,13 @@ public class SimplePlatformController : MonoBehaviour {
 	{
 		float h = Input.GetAxis("Horizontal");
 		
-		if (h * rb2d.velocity.x < maxSpeed)
-			rb2d.AddForce(Vector2.right * h * moveForce);
+		if (h * rb.velocity.x < maxSpeed)
+			rb.AddForce(Vector2.right * h * moveForce);
 		
-		if (Mathf.Abs (rb2d.velocity.x) > maxSpeed)
-			rb2d.velocity = new Vector2(Mathf.Sign (rb2d.velocity.x) * maxSpeed, rb2d.velocity.y);
+		if (Mathf.Abs (rb.velocity.x) > maxSpeed)
+			rb.velocity = new Vector2(Mathf.Sign (rb.velocity.x) * maxSpeed, rb.velocity.y);
 
-		anim.SetFloat("Speed", Mathf.Abs(rb2d.velocity.x));
+		anim.SetFloat("Speed", Mathf.Abs(rb.velocity.x));
 		
 		if (h > 0 && !facingRight)
 			Flip ();
@@ -54,7 +54,7 @@ public class SimplePlatformController : MonoBehaviour {
 		
 		if (jump)
 		{
-			rb2d.AddForce(new Vector2(0f, jumpForce));
+			rb.AddForce(new Vector2(0f, jumpForce));
 			jump = false;
 		}
 	}
