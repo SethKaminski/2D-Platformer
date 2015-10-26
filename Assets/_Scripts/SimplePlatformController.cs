@@ -14,8 +14,7 @@ public class SimplePlatformController : MonoBehaviour {
 	private bool grounded = false;
 	private Animator anim;
 	private Rigidbody2D rb;
-	
-	
+
 	// Use this for initialization
 	void Awake () 
 	{
@@ -58,7 +57,14 @@ public class SimplePlatformController : MonoBehaviour {
 			jump = false;
 		}
 	}
-	
+
+	void OnTriggerEnter2D(Collider2D other)
+	{
+		if(other.tag == "Coin")
+		{
+
+		}
+	}
 	
 	void Flip()
 	{

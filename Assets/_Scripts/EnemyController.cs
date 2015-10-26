@@ -30,8 +30,10 @@ public class EnemyController : MonoBehaviour {
 			bool groundAhead = Physics2D.Linecast(transform.position, this.groundCheck.position, 1 << LayerMask.NameToLayer ("Ground"));
 			Debug.DrawLine(transform.position, this.groundCheck.position);
 
-			bool wallAhead = Physics2D.Linecast(transform.position, this.wallCheck.position, 1 << LayerMask.NameToLayer ("Ground"));
-			Debug.DrawLine(transform.position, this.wallCheck.position);
+			LayerMask mask = 1 << LayerMask.NameToLayer ("Ground");
+			mask |= 1 << LayerMask.NameToLayer ("Enemy");
+			
+			bool wallAhead = Physics2D.Linecast(this.wallCheck.position, this.wallCheck.position, mask);
 
 			if(!groundAhead || wallAhead) {
 				flip ();
