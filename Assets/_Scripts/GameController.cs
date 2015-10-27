@@ -8,7 +8,9 @@ public class GameController : MonoBehaviour {
 	public int lives;
 
 	public Text scoreText;
-	public Text scoreLives;
+	public Text livesText;
+	public Text GameOverText;
+	public Text finleScoreText;
 
 	public GameObject Player;
 
@@ -17,6 +19,8 @@ public class GameController : MonoBehaviour {
 	{
 		UpdateLives();
 		UpdateScore();
+		GameOverText.text = "";
+		finleScoreText.text = "";
 	}
 
 	void Update()
@@ -24,6 +28,10 @@ public class GameController : MonoBehaviour {
 		if (lives <= 0)
 		{
 			Destroy(Player);
+			GameOverText.text = "Game Over";
+			finleScoreText.text = "Score: " + score;
+			scoreText.text = "";
+			livesText.text = "";
 		}
 	}
 
@@ -46,6 +54,6 @@ public class GameController : MonoBehaviour {
 	
 	private void UpdateLives()
 	{
-		scoreLives.text = "Lives: " + lives;
+		livesText.text = "Lives: " + lives;
 	}
 }

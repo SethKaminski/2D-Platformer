@@ -5,6 +5,7 @@ public class KillOnContact : MonoBehaviour {
 
 	public int DMG;
 
+	private AudioSource aS;
 	private GameController gameController;
 	
 	void Start ()
@@ -18,6 +19,8 @@ public class KillOnContact : MonoBehaviour {
 		{
 			Debug.Log("Cannot find 'GameController' script");
 		}
+
+		this.aS = GetComponent<AudioSource> ();
 	}
 
 	void OnCollisionEnter2D(Collision2D other)
@@ -25,6 +28,7 @@ public class KillOnContact : MonoBehaviour {
 		if(other.gameObject.tag == "Player")
 		{
 			gameController.subLive(DMG);
+			aS.Play();
 		}
 	}
 }
